@@ -1,0 +1,26 @@
+{% extends 'CRMapp/base.html' %}
+
+{% block content %}
+<!-- <h1>Register</h1></br> -->
+
+<div class="col-md-6 offset-md-3 my-4">
+    <h1>Register</h1></br>
+    <form method="POST" action="{% url 'register' %}">
+      {% csrf_token %}
+      {% if form.errors %}
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			  please fill form correctly...
+			  {% for field in form %}
+			  	{% if field.errors %}
+			  		{{ field.errors }}
+			  	{% endif %}
+			  {% endfor %}
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endif %}
+  
+      {{form.as_p}}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}
