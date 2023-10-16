@@ -4,4 +4,7 @@ It's a simple CRM Project Which Provide functionality to add user , provide func
 1. Install Python 3
 2. Create Virtual Environment
 3. Install requirment.txt
-4. cd To Right D
+4. make migrations and migrate
+5. Runserver
+6. Register
+7. Perform Different operations
